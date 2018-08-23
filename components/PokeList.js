@@ -1,7 +1,7 @@
 import React from "react";
 import { ScrollView, StyleSheet, View } from "react-native";
 import PokeCard from "./PokeCard";
-import pokemonList from "../pokemon_1-99.json";
+import pokemonList from "../pokemon_1-150.json";
 
 class PokeList extends React.Component {
   state = { pokemonList };
@@ -23,7 +23,8 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     flexWrap: "wrap",
     justifyContent: "space-around",
-    padding: 15
+    padding: 15,
+    paddingBottom: 75
   }
 });
 

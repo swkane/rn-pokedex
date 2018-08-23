@@ -9,7 +9,7 @@ const PokeCard = ({ pokemon }) => {
       <Text style={textStyle}>{pokemon.name}</Text>
       <Image
         source={{ uri: pokemon.sprites.front_default }}
-        style={{ width: 50, height: 50 }}
+        style={{ width: 50, height: 50, alignSelf: "center" }}
       />
     </View>
   );
