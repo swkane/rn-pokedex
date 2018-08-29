@@ -8,7 +8,7 @@ class PokeList extends React.Component {
   render() {
     return (
       <ScrollView>
-        <Button title="<- Back" onPress={this.props.handleBack} />
+        <Button title="< Back" onPress={this.props.handleBack} />
         <View style={styles.containerStyle}>
           {this.state.pokemonList.map(pokemon => (
             <PokeCard key={pokemon.id} pokemon={pokemon} />
