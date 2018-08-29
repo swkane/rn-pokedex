@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, View } from "react-native";
 import PokeList from "./components/PokeList";
 import Header from "./components/Header";
 import LandingScreen from "./components/LandingScreen";
@@ -9,7 +9,7 @@ export default class App extends React.Component {
     landingScreen: true
   };
 
-  handlePress = () => {
+  toggleScreen = () => {
     this.setState({ landingScreen: !this.state.landingScreen });
   };
 
@@ -18,9 +18,9 @@ export default class App extends React.Component {
       <View style={styles.container}>
         <Header />
         {this.state.landingScreen ? (
-          <LandingScreen handlePress={this.handlePress} />
+          <LandingScreen handlePress={this.toggleScreen} />
         ) : (
-          <PokeList />
+          <PokeList handleBack={this.toggleScreen} />
         )}
       </View>
     );

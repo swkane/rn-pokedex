@@ -1,5 +1,5 @@
 import React from "react";
-import { ScrollView, StyleSheet, View } from "react-native";
+import { ScrollView, StyleSheet, Button, View } from "react-native";
 import PokeCard from "./PokeCard";
 import pokemonList from "../pokemon_1-150.json";
 
@@ -8,6 +8,7 @@ class PokeList extends React.Component {
   render() {
     return (
       <ScrollView>
+        <Button title="<- Back" onPress={this.props.handleBack} />
         <View style={styles.containerStyle}>
           {this.state.pokemonList.map(pokemon => (
             <PokeCard key={pokemon.id} pokemon={pokemon} />
