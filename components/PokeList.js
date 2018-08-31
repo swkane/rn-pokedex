@@ -1,14 +1,17 @@
 import React from "react";
 import { ScrollView, StyleSheet, Button, View } from "react-native";
 import PokeCard from "./PokeCard";
-import pokemonList from "../pokemon_1-150.json";
+import pokemonList from "../assets/pokemon_1-150.json";
 
 class PokeList extends React.Component {
   state = { pokemonList };
   render() {
     return (
       <ScrollView>
-        <Button title="< Back" onPress={this.props.handleBack} />
+        <View style={styles.buttonContainerStyle}>
+          <Button title="< Back" onPress={this.props.handleBack} />
+        </View>
+
         <View style={styles.containerStyle}>
           {this.state.pokemonList.map(pokemon => (
             <PokeCard key={pokemon.id} pokemon={pokemon} />
@@ -26,6 +29,9 @@ const styles = StyleSheet.create({
     justifyContent: "space-around",
     padding: 15,
     paddingBottom: 75
+  },
+  buttonContainerStyle: {
+    alignItems: "flex-start"
   }
 });
 
